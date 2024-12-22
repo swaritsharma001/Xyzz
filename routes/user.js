@@ -18,7 +18,9 @@ router.get("/google/callback", passport.authenticate("google", {
     httpOnly: true, // Ensure cookie is sent only through HTTP(S)
     secure: process.env.NODE_ENV === 'production', // Only secure in production
     sameSite: 'None',
+    domain: ".techinword.tech"
   });
+  console.log(req.user.token")
   res.redirect("https://techinword.tech");
 });
 
