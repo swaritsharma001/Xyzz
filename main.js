@@ -19,7 +19,7 @@ app.use(session({
   saveUninitialized: false
 }))
 app.use(cors({
-  origin: "https://techinwords.tech",
+  origin: "https://techinword.tech",
   credentials: true
 }));
 ConnectToDb()
