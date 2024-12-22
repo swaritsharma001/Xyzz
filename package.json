@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "b": "nodemon backend/main.js"
+    "b": "nodemon main.js"
   },
   "keywords": [],
   "author": "",
