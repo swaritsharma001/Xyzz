@@ -49,7 +49,7 @@ export async function verifyAdmin(req, res, next){
     const user = await User.findById(decoded._id);
     if (!user) return res.status(401).json({ message: "User not found" });
     // Check user role ADMIN OR OWNER
-  if(user.role !== "ADMIN" && user.role !== "OWNER") return res.status(401).json({ message: "You are not an admin"})
+    if(user.role !== "ADMIN" && user.role !== "OWNER") return res.status(401).json({ message: "You are not an admin" })
     // Attach user data to request object
     req.user = user;
     next(); // Continue to next middleware or route handler
@@ -57,3 +57,4 @@ export async function verifyAdmin(req, res, next){
     console.error("Token verification error:", error); // Log the error for debugging purposes
     return res.status(401).json({ message: "Invalid Token" });
   }
+    }
