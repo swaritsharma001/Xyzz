@@ -20,7 +20,7 @@ router.get("/google/callback", passport.authenticate("google", {
     sameSite: 'None',
     domain: ".techinword.tech"
   });
-  console.log(req.user.token")
+  console.log(req.user.token)
   res.redirect("https://techinword.tech");
 });
 
