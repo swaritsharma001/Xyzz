@@ -33,6 +33,7 @@ passport.use(
 
         // Generate token for the new user
         const token = await createToken(newUser);
+        console.log("file passport.js", token)
         newUser.token = token;
         return done(null, newUser);
       } catch (error) {
