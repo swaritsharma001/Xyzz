@@ -7,6 +7,7 @@ import router from "./routes/blogs.js"
 import authRouter from "./routes/user.js"
 import session from "express-session";
 import cookie from "cookie-parser"
+import axios from "axios";
 const __dirname = path.resolve();
 const app = express();
 app.use(cookie())
@@ -24,6 +25,12 @@ app.use(cors({
 }));
 ConnectToDb()
 // Middleware to handle JSON requests
+function onServer(){
+  axios.get("https://techinword.tech")
+}
+setInterval(()=>{
+  onServer()
+}, 300000)
 app.use(express.json());
 app.use("/blog", router)
 app.use("/api/auth", authRouter)
