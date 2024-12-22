@@ -21,7 +21,7 @@ router.get("/google/callback", passport.authenticate("google", {
     domain: ".techinword.tech"
   });
   console.log(req.user.token)
-  res.redirect("https://techinword.tech");
+  res.redirect("https://techinword.tech/login");
 });
 
 // Logout
