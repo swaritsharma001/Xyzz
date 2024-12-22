@@ -10,7 +10,7 @@ router.get("/google/login", passport.authenticate("google", {
 
 // Google callback
 router.get("/google/callback", passport.authenticate("google", {
-  failureRedirect: "https://techinwords.tech"
+  failureRedirect: "https://techinword.tech"
 }), (req, res) => {
   // Assuming req.user.token exists after successful login
   res.cookie("token", req.user.token, {
@@ -19,13 +19,13 @@ router.get("/google/callback", passport.authenticate("google", {
     secure: process.env.NODE_ENV === 'production', // Only secure in production
     sameSite: 'None',
   });
-  res.redirect("https://techinwords.tech");
+  res.redirect("https://techinword.tech");
 });
 
 // Logout
 router.get("/logout", verifyToken, (req, res) => {
   res.clearCookie("token");
-  res.redirect("https://techinwords.tech");
+  res.redirect("https://techinword.tech");
 });
 
 // Get user data
