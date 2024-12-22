@@ -10,7 +10,7 @@ router.get("/google/login", passport.authenticate("google", {
 
 // Google callback
 router.get("/google/callback", passport.authenticate("google", {
-  failureRedirect: "https://techinword.tech"
+  failureRedirect: "https://techinword.tech/failed"
 }), (req, res) => {
   // Assuming req.user.token exists after successful login
   res.cookie("token", req.user.token, {
